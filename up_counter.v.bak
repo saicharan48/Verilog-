@@ -1,0 +1,15 @@
+module up_counter(clk,rst,out);
+parameter ff=3;
+parameter max=2**ff;
+input clk,rst;
+output out;
+reg [ff:0]f;
+always @(posedge clk)
+begin
+if (rst==0 || out==max-1)
+t<=4'd0;
+else
+t=t+4'd1;
+end
+assign out=t;
+endmodule 
